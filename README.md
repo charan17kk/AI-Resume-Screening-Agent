@@ -171,6 +171,8 @@ streamlit run streamlit_app.py
 
 **Kandukuri Sai Charan**
 
+Live App: https://ai-resume-screening-agent-7xfawytf2pnggpbryovfuq.streamlit.app/
+
 LinkedIn: https://www.linkedin.com/in/sai-charan-kandukuri-16a766245/
 
 GitHub: https://github.com/charan17kk/
