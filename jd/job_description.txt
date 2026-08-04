@@ -1,0 +1,66 @@
+JOB TITLE: Junior AI Research Associate
+
+COMPANY OVERVIEW
+
+We are looking for a passionate Junior AI Research Associate to join our AI team. You will work on Machine Learning, Natural Language Processing (NLP), Large Language Models (LLMs), and AI-powered applications. You should enjoy solving real-world problems and building intelligent software using Python.
+
+RESPONSIBILITIES
+
+- Build AI-powered applications using Python.
+- Develop Machine Learning and NLP solutions.
+- Work with Large Language Models (LLMs).
+- Perform data preprocessing and feature engineering.
+- Analyze structured and unstructured datasets.
+- Build AI agents and automation tools.
+- Collaborate using Git and GitHub.
+- Write clean, modular and well-documented code.
+- Present findings and technical documentation.
+
+REQUIRED SKILLS
+
+Programming:
+- Python
+- SQL
+
+Machine Learning:
+- Scikit-learn
+- Machine Learning fundamentals
+- Model Evaluation
+
+Data Analysis:
+- Pandas
+- NumPy
+
+Artificial Intelligence:
+- Natural Language Processing (NLP)
+- Prompt Engineering
+- Large Language Models (LLMs)
+
+Tools:
+- Git
+- GitHub
+
+GOOD TO HAVE
+
+- LangChain
+- Streamlit
+- AWS
+- Docker
+- REST APIs
+- Vector Databases
+- Hugging Face Transformers
+
+EDUCATION
+
+Bachelor's Degree in Computer Science, Artificial Intelligence, Data Science or related field.
+
+EXPERIENCE
+
+0-2 years of experience in AI, Machine Learning, Data Science or Software Development.
+
+SOFT SKILLS
+
+- Problem Solving
+- Communication
+- Teamwork
+- Continuous Learning
