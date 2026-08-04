@@ -1,0 +1,62 @@
+[
+    {
+        "Rank": 1,
+        "Candidate": "02_Aarav_ML_Engineer.pdf",
+        "Semantic Score": 0.671,
+        "Skill Score": 1.0,
+        "Experience Score": 1.0,
+        "Education Score": 1.0,
+        "Final Score": 0.868,
+        "Matched Skills": "aws, deep learning, docker, git, github, hugging face, langchain, machine learning, matplotlib, mysql, nlp, numpy, pandas, postgresql, python, pytorch, scikit-learn, sentence transformers, sql, streamlit, tensorflow, xgboost"
+    },
+    {
+        "Rank": 2,
+        "Candidate": "03_Priya_Data_Scientist.pdf",
+        "Semantic Score": 0.524,
+        "Skill Score": 0.682,
+        "Experience Score": 1.0,
+        "Education Score": 1.0,
+        "Final Score": 0.714,
+        "Matched Skills": "git, github, machine learning, matplotlib, mysql, nlp, numpy, pandas, postgresql, python, scikit-learn, sql, streamlit, tensorflow, xgboost"
+    },
+    {
+        "Rank": 3,
+        "Candidate": "05_Neha_Data_Analyst.pdf",
+        "Semantic Score": 0.467,
+        "Skill Score": 0.455,
+        "Experience Score": 1.0,
+        "Education Score": 1.0,
+        "Final Score": 0.623,
+        "Matched Skills": "git, github, matplotlib, mysql, numpy, pandas, postgresql, python, scikit-learn, sql"
+    },
+    {
+        "Rank": 4,
+        "Candidate": "04_Rahul_Python_Developer.pdf",
+        "Semantic Score": 0.38,
+        "Skill Score": 0.364,
+        "Experience Score": 1.0,
+        "Education Score": 1.0,
+        "Final Score": 0.561,
+        "Matched Skills": "aws, docker, git, github, mysql, postgresql, python, sql"
+    },
+    {
+        "Rank": 5,
+        "Candidate": "01_Charan_Resume.pdf",
+        "Semantic Score": 0.651,
+        "Skill Score": 0.636,
+        "Experience Score": 0.0,
+        "Education Score": 1.0,
+        "Final Score": 0.551,
+        "Matched Skills": "deep learning, git, github, machine learning, matplotlib, mysql, nlp, numpy, pandas, python, scikit-learn, sql, streamlit, xgboost"
+    },
+    {
+        "Rank": 6,
+        "Candidate": "06_Rohan_Frontend_Developer.pdf",
+        "Semantic Score": 0.42,
+        "Skill Score": 0.091,
+        "Experience Score": 1.0,
+        "Education Score": 1.0,
+        "Final Score": 0.495,
+        "Matched Skills": "git, github"
+    }
+]

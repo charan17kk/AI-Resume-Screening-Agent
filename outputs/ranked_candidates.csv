@@ -1,0 +1,7 @@
+Rank,Candidate,Semantic Score,Skill Score,Experience Score,Education Score,Final Score,Matched Skills
+1,02_Aarav_ML_Engineer.pdf,0.671,1.0,1.0,1.0,0.868,"aws, deep learning, docker, git, github, hugging face, langchain, machine learning, matplotlib, mysql, nlp, numpy, pandas, postgresql, python, pytorch, scikit-learn, sentence transformers, sql, streamlit, tensorflow, xgboost"
+2,03_Priya_Data_Scientist.pdf,0.524,0.682,1.0,1.0,0.714,"git, github, machine learning, matplotlib, mysql, nlp, numpy, pandas, postgresql, python, scikit-learn, sql, streamlit, tensorflow, xgboost"
+3,05_Neha_Data_Analyst.pdf,0.467,0.455,1.0,1.0,0.623,"git, github, matplotlib, mysql, numpy, pandas, postgresql, python, scikit-learn, sql"
+4,04_Rahul_Python_Developer.pdf,0.38,0.364,1.0,1.0,0.561,"aws, docker, git, github, mysql, postgresql, python, sql"
+5,01_Charan_Resume.pdf,0.651,0.636,0.0,1.0,0.551,"deep learning, git, github, machine learning, matplotlib, mysql, nlp, numpy, pandas, python, scikit-learn, sql, streamlit, xgboost"
+6,06_Rohan_Frontend_Developer.pdf,0.42,0.091,1.0,1.0,0.495,"git, github"

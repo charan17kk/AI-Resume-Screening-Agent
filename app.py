@@ -1,56 +1,133 @@
 from parser import load_all_resumes
 from scorer import calculate_similarity
 from utils.skills import skill_match_score
+from utils.experience import experience_score
+from utils.education import education_score
+from utils.exporter import export_results
+from llm import generate_reason
 
+# ----------------------------
+# Load Job Description
+# ----------------------------
 with open("jd/job_description.txt", "r", encoding="utf-8") as f:
     job_description = f.read()
 
+# ----------------------------
+# Load Resumes
+# ----------------------------
 resumes = load_all_resumes("resumes")
+
+candidate_names = {
+    "01_Charan_Resume.pdf": "Kandukuri Sai Charan",
+    "02_Aarav_ML_Engineer.pdf": "Aarav Sharma",
+    "03_Priya_Data_Scientist.pdf": "Priya Nair",
+    "04_Rahul_Python_Developer.pdf": "Rahul Verma",
+    "05_Neha_Data_Analyst.pdf": "Neha Patel",
+    "06_Rohan_Frontend_Developer.pdf": "Rohan Gupta"
+}
 
 results = []
 
+# ----------------------------
+# Process Each Resume
+# ----------------------------
 for name, text in resumes.items():
 
-    semantic_score = calculate_similarity(job_description, text)
+    # Semantic Similarity
+    semantic_score = calculate_similarity(
+        job_description,
+        text
+    )
 
+    # Skill Matching
     skill_score, matched, jd_skills = skill_match_score(
         job_description,
         text
     )
 
-    final_score = (
-        semantic_score * 0.7 +
-        skill_score * 0.3
+    # Experience
+    exp_score = experience_score(
+        job_description,
+        text
     )
 
+    # Education
+    edu_score = education_score(
+        job_description,
+        text
+    )
+
+    # Final Weighted Score
+    final_score = (
+        semantic_score * 0.40 +
+        skill_score * 0.30 +
+        exp_score * 0.20 +
+        edu_score * 0.10
+    )
+
+    # Save Results
     results.append({
         "name": name,
         "semantic": semantic_score,
         "skills": skill_score,
+        "experience": exp_score,
+        "education": edu_score,
         "final": final_score,
         "matched": matched
     })
 
+# ----------------------------
+# Sort Results
+# ----------------------------
 results = sorted(
     results,
     key=lambda x: x["final"],
     reverse=True
 )
 
+# ----------------------------
+# Display Results
+# ----------------------------
 print("\n========== FINAL RANKINGS ==========\n")
 
-for i, r in enumerate(results, start=1):
+for rank, r in enumerate(results, start=1):
 
-    print(f"{i}. {r['name']}")
+    print(f"{rank}. {r['name']}")
+    print(f"Semantic Score   : {r['semantic']:.3f}")
+    print(f"Skill Score      : {r['skills']:.3f}")
+    print(f"Experience Score : {r['experience']:.3f}")
+    print(f"Education Score  : {r['education']:.3f}")
+    print(f"\nFinal Score      : {r['final']:.3f}")
 
-    print(f"Semantic : {r['semantic']:.3f}")
-
-    print(f"Skills   : {r['skills']:.3f}")
-
-    print(f"Final    : {r['final']:.3f}")
-
-    print("Matched Skills:")
-
+    print("\nMatched Skills:")
     print(", ".join(sorted(r["matched"])))
 
-    print("-" * 70)
+    # ----------------------------
+    # AI Recommendation
+    # ----------------------------
+    try:
+       # Remove .pdf extension for cleaner output
+        candidate_name = candidate_names.get(
+            r["name"],
+            r["name"].replace(".pdf", "")
+        )
+
+        recommendation = generate_reason(
+            candidate_name,
+            r["matched"],
+            r["final"]
+        )
+
+        print("\nAI Recommendation:")
+        print(recommendation)
+
+    except Exception as e:
+        print("\nAI Recommendation:")
+        print(f"Could not generate recommendation: {e}")
+    print()
+    print("-" * 80)
+
+# ----------------------------
+# Export CSV & JSON
+# ----------------------------
+export_results(results)
