@@ -94,12 +94,6 @@ Final Score
 
 ---
 
-## Best Candidate
-
-![Best Candidate](screenshots/best_candidate.png)
-
----
-
 ## AI Recommendations
 
 ![Recommendation](screenshots/recommendation.png)
