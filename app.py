@@ -17,15 +17,6 @@ with open("jd/job_description.txt", "r", encoding="utf-8") as f:
 # ----------------------------
 resumes = load_all_resumes("resumes")
 
-candidate_names = {
-    "01_Charan_Resume.pdf": "Kandukuri Sai Charan",
-    "02_Aarav_ML_Engineer.pdf": "Aarav Sharma",
-    "03_Priya_Data_Scientist.pdf": "Priya Nair",
-    "04_Rahul_Python_Developer.pdf": "Rahul Verma",
-    "05_Neha_Data_Analyst.pdf": "Neha Patel",
-    "06_Rohan_Frontend_Developer.pdf": "Rohan Gupta"
-}
-
 results = []
 
 # ----------------------------
@@ -45,13 +36,13 @@ for name, text in resumes.items():
         text
     )
 
-    # Experience
+    # Experience Score
     exp_score = experience_score(
         job_description,
         text
     )
 
-    # Education
+    # Education Score
     edu_score = education_score(
         job_description,
         text
@@ -65,7 +56,6 @@ for name, text in resumes.items():
         edu_score * 0.10
     )
 
-    # Save Results
     results.append({
         "name": name,
         "semantic": semantic_score,
@@ -102,14 +92,17 @@ for rank, r in enumerate(results, start=1):
     print("\nMatched Skills:")
     print(", ".join(sorted(r["matched"])))
 
+    print()
+
     # ----------------------------
     # AI Recommendation
     # ----------------------------
     try:
-       # Remove .pdf extension for cleaner output
-        candidate_name = candidate_names.get(
-            r["name"],
-            r["name"].replace(".pdf", "")
+
+        candidate_name = (
+            r["name"]
+            .replace(".pdf", "")
+            .replace("_", " ")
         )
 
         recommendation = generate_reason(
@@ -118,12 +111,14 @@ for rank, r in enumerate(results, start=1):
             r["final"]
         )
 
-        print("\nAI Recommendation:")
+        print("AI Recommendation:")
         print(recommendation)
 
     except Exception as e:
-        print("\nAI Recommendation:")
+
+        print("AI Recommendation:")
         print(f"Could not generate recommendation: {e}")
+
     print()
     print("-" * 80)
 
@@ -131,3 +126,5 @@ for rank, r in enumerate(results, start=1):
 # Export CSV & JSON
 # ----------------------------
 export_results(results)
+
+print("\nFiles saved inside outputs/")
